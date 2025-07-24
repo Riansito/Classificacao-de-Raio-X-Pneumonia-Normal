@@ -1,85 +1,132 @@
-<style>
-    /* Reset básico */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+/* ----------------------------
+   RESET E ESTILOS GERAIS
+-----------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    body {
-        background: #f2f7fc;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        min-height: 100vh;
-        padding: 40px 20px;
-    }
+body {
+    background: #f2f7fc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
 
-    .Cabecalho {
-        text-align: center;
-        margin-bottom: 30px;
-    }
+/* ----------------------------
+   ESTILOS COMPARTILHADOS
+-----------------------------*/
+form {
+    display: flex;
+    flex-direction: column;
+}
 
-    .Cabecalho h1 {
-        color: #004b8d;
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
+label {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #333;
+}
 
-    .Cabecalho h3 {
-        color: #666;
-        font-weight: normal;
-        font-size: 18px;
-    }
+input, input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.2s;
+    background: #fff;
+}
 
-    .formulario {
-        background: #ffffff;
-        padding: 30px 40px;
-        border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 450px;
-    }
+input:focus, input[type="file"]:focus {
+    border-color: #0077cc;
+}
 
-    form {
-        display: flex;
-        flex-direction: column;
-    }
+button {
+    margin-top: 25px;
+    padding: 12px;
+    background: #0077cc;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
 
-    label {
-        font-weight: bold;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #333;
-    }
+button:hover {
+    background: #005fa3;
+}
 
-    input {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        outline: none;
-        transition: border 0.2s;
-    }
 
-    input:focus {
-        border-color: #0077cc;
-    }
+/* ----------------------------
+   TELA 1: FORMULÁRIO DE DADOS
+-----------------------------*/
+.Cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-    button {
-        margin-top: 25px;
-        padding: 12px;
-        background: #0077cc;
-        color: #fff;
-        font-weight: bold;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
+.Cabecalho h1 {
+    color: #004b8d;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
 
-    button:hover {
-        background: #005fa3;
-    }
-</style>
+.Cabecalho h3 {
+    color: #666;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.formulario {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ----------------------------
+   TELA 2: ENVIO DE IMAGEM
+-----------------------------*/
+.cabecalhoEnvio {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalhoEnvio h1 {
+    color: #004b8d;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.cabecalhoEnvio h3 {
+    color: #666;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.formularioEnvio {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+.mensagem-sucesso {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}

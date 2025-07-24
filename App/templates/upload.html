@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Classificador de Pneumonia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class = "cabecalhoEnvio">
+        <h1>
+            Envie a imagem do seu exame de Raio-X {{nome}}
+        </h1>
+        <h3>
+            A imagem será analisada automaticamente e o resultado será enviado para o seu email.
+        </h3>
+        <h3>{{email}}</h3>
+    </div>
+    <div class ="formularioEnvio">
+        <form action = "/processamento" method="POST" enctype="multipart/form-data">
+            <label for = "raiox">Imagem</label>
+            <input type="file" name = "raiox" placeholder="Adicione uma imagem" required><br>
+            <button>
+                Enivar para analise
+            </button>
+        </form>
+    </div>
+    
+    {% if mensagem %}
+        <div class="mensagem-sucesso">
+            {{ mensagem }}
+        </div>
+    {% endif %}
+    
+</body>
