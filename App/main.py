@@ -20,6 +20,7 @@ import os
 
 app = Flask(__name__)
 
+modelo = tf.keras.models.load_model("App/Model/modelo_completo1.h5")
 app.secret_key = os.getenv("SECRET_KEY")
 email_remetente = os.getenv("EMAIL_APP")
 senha_email = os.getenv("EMAIL_PASSWORD")
@@ -77,8 +78,8 @@ Recomendamos que procure atendimento médico especializado para avaliação e tr
 Atenciosamente,
 Equipe Médica
 """
-
         enviaEmail(mensagem, email)
+
     else:
         mensagem = f"""\
 Prezado(a) {nome} (CPF: {cpf}),
@@ -89,7 +90,6 @@ Caso apresente sintomas ou dúvidas, sugerimos acompanhamento médico.
 Atenciosamente,
 Equipe Médica
 """
-
         enviaEmail(mensagem, email)
     return render_template("upload.html", mensagem = "Imagem enviada com sucesso! Em alguns segundos vc ira receber o resultado no seu e-mail")
 
