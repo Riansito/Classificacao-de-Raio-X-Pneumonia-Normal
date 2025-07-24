@@ -1,25 +1,37 @@
+#Biblioteca principal para  a API
 from flask import Flask, render_template, redirect, request, session
+
+#Processamento da imagem recebida do usuário
 from PIL import Image
 import numpy as np
+
+#Carregar o modelo salvo
 import tensorflow as tf
+
+#Gerenciar o envio do email para o usuario
 import smtplib
 import ssl
 from email.message import EmailMessage
+
+#Carregar as chaves da api do flask
 from dotenv import load_dotenv
 import os
 
 
 app = Flask(__name__)
-app.secret_key ="12bb2f7a8fae07f6a931b8e4c695b474"
+
 app.secret_key = os.getenv("SECRET_KEY")
 email_remetente = os.getenv("EMAIL_APP")
 senha_email = os.getenv("EMAIL_PASSWORD")
+
+#Função para processar a imagem
 def processaImagemDoUsuario(imagem):
     imagem = Image.open(imagem.stream).convert("RGB")
     imagem = imagem.resize((150, 150))
     imagem_array = np.array(imagem)/255
     return np.expand_dims(imagem_array, axis=0)
 
+#Função que gerencia o envio do email
 def enviaEmail(mensagem, destinatario, assunto = "RESULTADO DA ANALISE DO RAIO-X", remetente = email_remetente, senha = senha_email):
     mensagem_envio = EmailMessage()
     mensagem_envio["From"] = remetente
