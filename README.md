@@ -74,7 +74,7 @@ project/
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seuusuario/seurepositorio.git
+git clone https://github.com/Riansito/Classificacao-de-Raio-X-Pneumonia-Normal
 ````
 
 2. Execute o app Flask:
